@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /_ds
+Disallow: /_vendor
+Disallow: /_preview
+Disallow: /components
+Disallow: /uploads
+
+Sitemap: https://www.conciergerie-paris-ouest.fr/sitemap.xml

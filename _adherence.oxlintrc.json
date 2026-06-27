@@ -1,0 +1,391 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "assets/**",
+              "components/general/AgeWarning/**",
+              "components/general/ArticleCard/**",
+              "components/general/Breadcrumb/**",
+              "components/general/CodeBlock/**",
+              "components/general/DataChart/**",
+              "components/general/Hero/**",
+              "components/general/KeyPointsBox/**",
+              "components/general/LeadForm/**",
+              "components/general/LiveBlog/**",
+              "components/general/Navigation/**",
+              "components/general/PaywallPrompt/**",
+              "components/general/TickerBar/**",
+              "uploads/**",
+              "villes/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cambria|Inter|JetBrains Mono))/i]",
+        "message": "Font not provided by the design system. Available: Cambria, Inter, JetBrains Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AgeWarning'] > JSXAttribute > JSXIdentifier[name!=/^(?:publishedAt|thresholdMonths|className|key|ref|className|style|children)$/]",
+        "message": "<AgeWarning> doesn't accept that prop. Declared props: publishedAt, thresholdMonths, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ArticleCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:headline|href|variant|deck|category|pillar|author|timestamp|imageSrc|imageAlt|isBreaking|readingTimeMin|className|key|ref|className|style|children)$/]",
+        "message": "<ArticleCard> doesn't accept that prop. Declared props: headline, href, variant, deck, category, pillar, author, timestamp, imageSrc, imageAlt, isBreaking, readingTimeMin, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ArticleCard'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:lead|standard|brief)$/]",
+        "message": "<ArticleCard> variant must be one of 'lead' | 'standard' | 'brief'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ArticleCard'] > JSXAttribute[name.name='pillar'] > Literal[value!=/^(?:news|opinion|sport|culture|lifestyle|world)$/]",
+        "message": "<ArticleCard> pillar must be one of 'news' | 'opinion' | 'sport' | 'culture' | 'lifestyle' | 'world'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Breadcrumb'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|className|key|ref|className|style|children)$/]",
+        "message": "<Breadcrumb> doesn't accept that prop. Declared props: items, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CodeBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:code|language|filename|showLineNumbers|className|key|ref|className|style|children)$/]",
+        "message": "<CodeBlock> doesn't accept that prop. Declared props: code, language, filename, showLineNumbers, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataChart'] > JSXAttribute > JSXIdentifier[name!=/^(?:data|type|title|unit|source|color|className|key|ref|className|style|children)$/]",
+        "message": "<DataChart> doesn't accept that prop. Declared props: data, type, title, unit, source, color, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataChart'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:line|bar|sparkline)$/]",
+        "message": "<DataChart> type must be one of 'line' | 'bar' | 'sparkline'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute > JSXIdentifier[name!=/^(?:headline|variant|deck|imageSrc|imageAlt|primaryCTA|secondaryCTA|category|trustBadge|className|key|ref|className|style|children)$/]",
+        "message": "<Hero> doesn't accept that prop. Declared props: headline, variant, deck, imageSrc, imageAlt, primaryCTA, secondaryCTA, category, trustBadge, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:editorial|product|text-only)$/]",
+        "message": "<Hero> variant must be one of 'editorial' | 'product' | 'text-only'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='KeyPointsBox'] > JSXAttribute > JSXIdentifier[name!=/^(?:points|title|className|key|ref|className|style|children)$/]",
+        "message": "<KeyPointsBox> doesn't accept that prop. Declared props: points, title, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LeadForm'] > JSXAttribute > JSXIdentifier[name!=/^(?:fields|submitLabel|onSubmit|successMessage|errorMessage|className|key|ref|className|style|children)$/]",
+        "message": "<LeadForm> doesn't accept that prop. Declared props: fields, submitLabel, onSubmit, successMessage, errorMessage, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LiveBlog'] > JSXAttribute > JSXIdentifier[name!=/^(?:headline|isLive|entries|showKeyEventsOnly|className|key|ref|className|style|children)$/]",
+        "message": "<LiveBlog> doesn't accept that prop. Declared props: headline, isLive, entries, showKeyEventsOnly, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Navigation'] > JSXAttribute > JSXIdentifier[name!=/^(?:logo|logoHref|items|ctaLabel|ctaHref|variant|className|key|ref|className|style|children)$/]",
+        "message": "<Navigation> doesn't accept that prop. Declared props: logo, logoHref, items, ctaLabel, ctaHref, variant, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Navigation'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:editorial|product)$/]",
+        "message": "<Navigation> variant must be one of 'editorial' | 'product'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PaywallPrompt'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|headline|body|ctaLabel|ctaHref|articlesRemaining|className|key|ref|className|style|children)$/]",
+        "message": "<PaywallPrompt> doesn't accept that prop. Declared props: variant, headline, body, ctaLabel, ctaHref, articlesRemaining, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='PaywallPrompt'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:soft|hard|support)$/]",
+        "message": "<PaywallPrompt> variant must be one of 'soft' | 'hard' | 'support'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TickerBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|label|className|key|ref|className|style|children)$/]",
+        "message": "<TickerBar> doesn't accept that prop. Declared props: items, label, className."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AgeWarning": {
+        "replaces": []
+      },
+      "ArticleCard": {
+        "replaces": []
+      },
+      "Breadcrumb": {
+        "replaces": []
+      },
+      "CodeBlock": {
+        "replaces": []
+      },
+      "DataChart": {
+        "replaces": []
+      },
+      "Hero": {
+        "replaces": []
+      },
+      "KeyPointsBox": {
+        "replaces": []
+      },
+      "LeadForm": {
+        "replaces": []
+      },
+      "LiveBlog": {
+        "replaces": []
+      },
+      "Navigation": {
+        "replaces": []
+      },
+      "PaywallPrompt": {
+        "replaces": []
+      },
+      "TickerBar": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--border-radius-lg",
+      "--border-radius-md",
+      "--border-radius-sm",
+      "--color-accent-breaking",
+      "--color-accent-primary",
+      "--color-bg-inverse",
+      "--color-bg-primary",
+      "--color-bg-surface",
+      "--color-black",
+      "--color-blue-100",
+      "--color-blue-300",
+      "--color-blue-500",
+      "--color-blue-700",
+      "--color-blue-900",
+      "--color-border-default",
+      "--color-border-subtle",
+      "--color-gray-100",
+      "--color-gray-200",
+      "--color-gray-300",
+      "--color-gray-400",
+      "--color-gray-50",
+      "--color-gray-500",
+      "--color-gray-600",
+      "--color-gray-700",
+      "--color-gray-800",
+      "--color-gray-900",
+      "--color-gray-950",
+      "--color-green-500",
+      "--color-green-600",
+      "--color-pillar-culture",
+      "--color-pillar-lifestyle",
+      "--color-pillar-news",
+      "--color-pillar-opinion",
+      "--color-pillar-sport",
+      "--color-pillar-world",
+      "--color-product-accent",
+      "--color-product-bg",
+      "--color-product-border",
+      "--color-product-surface",
+      "--color-purple-500",
+      "--color-purple-600",
+      "--color-red-100",
+      "--color-red-500",
+      "--color-red-700",
+      "--color-text-inverse",
+      "--color-text-muted",
+      "--color-text-primary",
+      "--color-text-secondary",
+      "--color-white",
+      "--duration-fast",
+      "--duration-normal",
+      "--duration-slow",
+      "--ease-in-out",
+      "--ease-out",
+      "--focus-ring",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--font-ui",
+      "--font-weight-bold",
+      "--font-weight-medium",
+      "--font-weight-regular",
+      "--font-weight-semibold",
+      "--lh-loose",
+      "--lh-normal",
+      "--lh-relaxed",
+      "--lh-snug",
+      "--lh-tight",
+      "--max-width-article",
+      "--max-width-marketing",
+      "--measure-article",
+      "--paragraph-gap",
+      "--section-gap-editorial",
+      "--section-gap-product",
+      "--shadow-medium",
+      "--shadow-strong",
+      "--shadow-subtle",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-20",
+      "--space-24",
+      "--space-3",
+      "--space-30",
+      "--space-4",
+      "--space-40",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--text-2xl",
+      "--text-3xl",
+      "--text-4xl",
+      "--text-5xl",
+      "--text-6xl",
+      "--text-7xl",
+      "--text-base",
+      "--text-lg",
+      "--text-sm",
+      "--text-xl",
+      "--text-xs"
+    ],
+    "tokenKinds": {
+      "--color-white": "color",
+      "--color-black": "color",
+      "--color-gray-50": "color",
+      "--color-gray-100": "color",
+      "--color-gray-200": "color",
+      "--color-gray-300": "color",
+      "--color-gray-400": "color",
+      "--color-gray-500": "color",
+      "--color-gray-600": "color",
+      "--color-gray-700": "color",
+      "--color-gray-800": "color",
+      "--color-gray-900": "color",
+      "--color-gray-950": "color",
+      "--color-blue-100": "color",
+      "--color-blue-300": "color",
+      "--color-blue-500": "color",
+      "--color-blue-700": "color",
+      "--color-blue-900": "color",
+      "--color-red-100": "color",
+      "--color-red-500": "color",
+      "--color-red-700": "color",
+      "--color-green-500": "color",
+      "--color-green-600": "color",
+      "--color-purple-500": "color",
+      "--color-purple-600": "color",
+      "--color-text-primary": "font",
+      "--color-text-secondary": "font",
+      "--color-text-muted": "font",
+      "--color-text-inverse": "font",
+      "--color-bg-primary": "color",
+      "--color-bg-surface": "color",
+      "--color-bg-inverse": "color",
+      "--color-border-default": "color",
+      "--color-border-subtle": "color",
+      "--color-accent-primary": "color",
+      "--color-accent-breaking": "color",
+      "--color-pillar-news": "color",
+      "--color-pillar-opinion": "color",
+      "--color-pillar-sport": "color",
+      "--color-pillar-culture": "color",
+      "--color-pillar-lifestyle": "color",
+      "--color-pillar-world": "color",
+      "--color-product-bg": "color",
+      "--color-product-surface": "color",
+      "--color-product-border": "color",
+      "--color-product-accent": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono": "font",
+      "--font-ui": "font",
+      "--text-xs": "font",
+      "--text-sm": "font",
+      "--text-base": "font",
+      "--text-lg": "font",
+      "--text-xl": "font",
+      "--text-2xl": "font",
+      "--text-3xl": "font",
+      "--text-4xl": "font",
+      "--text-5xl": "font",
+      "--text-6xl": "font",
+      "--text-7xl": "font",
+      "--font-weight-regular": "font",
+      "--font-weight-medium": "font",
+      "--font-weight-semibold": "font",
+      "--font-weight-bold": "font",
+      "--lh-tight": "font",
+      "--lh-snug": "font",
+      "--lh-normal": "font",
+      "--lh-relaxed": "font",
+      "--lh-loose": "font",
+      "--measure-article": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--space-20": "spacing",
+      "--space-24": "spacing",
+      "--space-30": "spacing",
+      "--space-40": "spacing",
+      "--section-gap-editorial": "spacing",
+      "--section-gap-product": "spacing",
+      "--paragraph-gap": "spacing",
+      "--duration-fast": "other",
+      "--duration-normal": "other",
+      "--duration-slow": "other",
+      "--ease-in-out": "other",
+      "--ease-out": "other",
+      "--max-width-article": "spacing",
+      "--max-width-marketing": "spacing",
+      "--border-radius-sm": "radius",
+      "--border-radius-md": "radius",
+      "--border-radius-lg": "radius",
+      "--shadow-subtle": "shadow",
+      "--shadow-medium": "shadow",
+      "--shadow-strong": "shadow",
+      "--focus-ring": "color"
+    },
+    "fontFamilies": [
+      "Cambria",
+      "Inter",
+      "JetBrains Mono"
+    ]
+  }
+}
