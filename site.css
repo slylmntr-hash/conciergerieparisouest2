@@ -297,7 +297,7 @@ footer{background:var(--paper);border-top:1px solid var(--line);}
 .foot-base a:hover{color:var(--gold);}
 @media(max-width:980px){.foot-in{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.foot-in{grid-template-columns:1fr;}.shell{padding:0 22px;}.nav-in,.ticker-in,.final-in,.foot-in,.foot-base{padding-left:22px;padding-right:22px;}}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:44px;}}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:44px;}.ph-grid{grid-template-columns:1fr;gap:30px;}}
 
 /* ---------- breadcrumb ---------- */
 .breadcrumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
@@ -669,6 +669,73 @@ html[data-identite="atelier"] .res-eyebrow b{color:var(--gold-soft)!important;}
 .cd-links a:hover{color:var(--gold);border-bottom-color:var(--gold-soft);}
 @media(max-width:760px){.commune-directory{grid-template-columns:1fr;gap:30px;}}
 @media(max-width:420px){.cd-links{grid-template-columns:1fr;}}
+
+/* ===================================================================
+   MOBILE-FIRST — densité, type et espacements optimisés petit écran
+   =================================================================== */
+html,body{overflow-x:hidden;max-width:100%;}
+/* anti-débordement : casse les longues chaînes (e-mails, URLs) et neutralise les nowrap */
+p,h1,h2,h3,h4,.lead,.v,.ci-item .v,.market .copy,.tl-body,.s3 p,a{overflow-wrap:break-word;}
+.contact-aside .ci-item .v,.contact-aside .ci-item .v.small{overflow-wrap:anywhere;word-break:break-word;}
+img,.leaflet-map{max-width:100%;}
+@media(max-width:600px){
+  /* respiration des sections : moins d'espace vide */
+  .sec{padding:52px 0;}
+  .sec-head{flex-wrap:wrap;gap:8px 16px;margin-bottom:26px;}
+  .page-hero{padding:32px 0 0;}
+  .hero{padding:40px 0 16px;}
+  .hero-grid{gap:34px;}
+  .stats{margin-top:40px;}
+  /* lisibilité du texte courant */
+  .lead{font-size:17px;line-height:1.5;margin-top:18px;max-width:none;}
+  .h1{margin-top:12px;}
+  .stat b{font-size:40px;}
+  .stat{padding:24px 0;}
+  /* cartes / panneaux : padding resserré */
+  .panel-tonal,.panel-dark{padding:22px 20px;}
+  .calc-form{padding:26px 22px;}
+  .calc-out{padding:26px 22px;}
+  .feature .cap{padding:20px;}
+  .feature .cap h3{font-size:21px;}
+  /* zones & cartes pleine largeur + carte plus courte */
+  .leaflet-map,.leaflet-map.tall,.dir-map{height:300px !important;}
+  /* cibles tactiles confortables (≥44px) */
+  .btn,.type-chip,.st-btn,.nav-links.open a,.zone,.cross,.chip{min-height:44px;}
+  .btn{padding:13px 20px;display:inline-flex;align-items:center;justify-content:center;}
+  .cta-row{gap:10px;}
+  .cta-row .btn{flex:1 1 auto;}
+  /* nav mobile : barre plus compacte */
+  .nav-in{padding:14px 22px;gap:14px;}
+  .brand .bk{font-size:19px;}
+  /* CTA redondant masqué (le menu contient déjà Contact) ; menu toujours visible */
+  .nav .btn-solid{display:none;}
+  .nav-spacer{display:none;}
+  .menu-toggle{margin-left:auto;white-space:nowrap;font-size:14px;}
+  /* sous-pages : titre + texte + image empilés pleine largeur */
+  .ph-grid{grid-template-columns:1fr;gap:22px;}
+  .page-hero h1{font-size:clamp(40px,12vw,56px);}
+  .page-hero .ph{aspect-ratio:16/10;width:100%;}
+  .page-hero .lead{font-size:17px;line-height:1.5;}
+  /* formulaires : éviter le zoom iOS (police ≥16px) */
+  input.ctrl,select.ctrl,textarea.ctrl,.ctrl{font-size:16px;}
+  /* annuaire / footer : aération */
+  .foot-in{gap:30px;}
+  /* anti-débordement spécifique petit écran */
+  .hours{flex-direction:column;max-width:none;}
+  .hours .slot{border-right:0;border-bottom:1px solid var(--line);}
+  .hours .slot:last-child{border-bottom:0;}
+  .cross .cgo,.pc-tag,.pc-title{white-space:normal;}
+  .res-meta{gap:20px;}
+  .res-range .mid{font-size:46px;}
+  .calc{border-radius:14px;}
+  .contact-form,.contact-aside{padding:26px 22px;}
+}
+@media(max-width:380px){
+  .h1{font-size:40px;}
+  .page-hero h1{font-size:38px;}
+  .shell{padding:0 18px;}
+  .nav-in,.ticker-in,.final-in,.foot-in,.foot-base{padding-left:18px;padding-right:18px;}
+}
 
 /* plan du site — cartes pages principales */
 .sitemap-main{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:6px;}
