@@ -331,7 +331,7 @@ window.CPO_CONTENT = {
     wikiAnchor: "Saint-Cyr-l'École, dans les Yvelines"
   },
   "saint-germain-en-laye": {
-    image:"", imageAlt:"Château et terrasse de Saint-Germain-en-Laye, gestion locative courte durée (78)", imageCredit:"",  // Saint-Germain-en-Laye
+    image:"images/villes/saint-germain-en-laye.jpg", imageAlt:"Place du Marché Neuf à Saint-Germain-en-Laye, conciergerie et gestion locative courte durée (78)", imageCredit:"Chabe01 / Wikimedia Commons (CC BY-SA 4.0)",  // Saint-Germain-en-Laye
     lead: "Conciergerie courte durée à Saint-Germain-en-Laye : cadre résidentiel d'exception et haut lieu patrimonial au terminus du RER A.",
     metaDescription: "Gestion locative courte durée à Saint-Germain-en-Laye (78) : château, forêt domaniale et tourisme patrimonial. Estimation gratuite.",
     paragraphes: [
@@ -414,7 +414,7 @@ window.CPO_CONTENT = {
 
   /* ===== Hauts-de-Seine · 92 ===== */
   "antony": {
-    image:"", imageAlt:"Centre-ville d'Antony, gestion locative courte durée (92)", imageCredit:"",  // Antony
+    image:"images/villes/antony.jpg", imageAlt:"Avenue de la Division Leclerc à Antony, conciergerie et gestion locative courte durée (92)", imageCredit:"Chabe01 / Wikimedia Commons (CC BY-SA 4.0)",  // Antony
     lead: "Conciergerie courte durée à Antony : pôle résidentiel et étudiant du sud des Hauts-de-Seine, sur l'axe Paris–Massy–Orly.",
     metaDescription: "Gestion locative courte durée à Antony (92) : RER B, proximité Orly et pôle de Massy, demande étudiante et affaires. Estimation gratuite de vos revenus.",
     paragraphes: [
